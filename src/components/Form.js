@@ -12,6 +12,8 @@ const Form = ({
       <div className='col-md-6'>
         <form onSubmit={handleIsochroneSearch} className="my-3">
           <div className="d-flex flex-column align-item-center ">
+
+            {/* User 1  */}
             <input
               id="address1"
               type="text"
@@ -86,8 +88,7 @@ const Form = ({
               </div>
             </div>
 
-
-
+            {/* User 2 */}
             <div className="d-flex flex-column align-item-center ">
             <input
               id="address2"
@@ -165,12 +166,9 @@ const Form = ({
             </div>
 
             <button type="submit" className='btn btn-primary fw-bold my-1 w-25'>Search</button>
-
           </div>
-
         </form>
       </div>
-
     </div>
   )
 }

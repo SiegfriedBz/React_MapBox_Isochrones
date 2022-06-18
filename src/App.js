@@ -8,8 +8,6 @@ const MAPBOX_TOKEN =  process.env.REACT_APP_MAPBOX_API;
 
 function App() {
 
-  // ** Users 1 & 2  **
-
   // Inputs for Users location (forward GeoCoder API Call) + for Isochrone API Call
   const [user1Input, setUser1Input] = useState({address1: "", profile1:"", duration1: ""});
   const [user2Input, setUser2Input] = useState({address2: "", profile2:"", duration2: ""});
@@ -21,9 +19,7 @@ function App() {
   // GeoJson data from Isochrone API Call
   const [fetchedGeoGlobal, setFetchedGeoJsonGlobal] = useState([]);
 
-
   const handleIsochroneSearch = async(e) => {
-
     e.preventDefault();
 
     // Get user 1 data from the home page input

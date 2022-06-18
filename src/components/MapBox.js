@@ -52,7 +52,6 @@ const MapBox = ({
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
-
         {geoJsonGlobal &&
           <>
             <Source type="geojson" data={geoJsonGlobal[0]}>
