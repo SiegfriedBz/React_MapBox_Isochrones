@@ -64,7 +64,7 @@ const MapBox = ({
         {typeof fetchedGeoGlobal[0] !== 'undefined' &&
           <>
             <Source id="users" type="geojson" data={geoJsonGlobal}>
-                <Layer {...layerStyle2} />
+                <Layer {...layerStyle1} />
             </Source>
           </>
         }

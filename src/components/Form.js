@@ -8,22 +8,25 @@ const Form = ({
   handleIsochroneSearch,
 }) => {
   return (
-    <div className='row'>
-      <div className='col-md-6'>
-        <form onSubmit={handleIsochroneSearch} className="my-3">
-          <div className="d-flex flex-column align-item-center ">
+    <div className='container'>
+      <form onSubmit={handleIsochroneSearch} className="my-1">
+        <div className="d-flex justify-content-around">
+
+          <div className="d-flex mx-5">
 
             {/* User 1  */}
-            <input
-              id="address1"
-              type="text"
-              className='form-control w-25'
-              placeholder='Enter a location'
-              value={user1Input.address1}
-              onChange={(e) => setUser1Input({...user1Input, [e.target.id]: e.target.value})}
-              />
-
-            <div className="bg-white form-control w-25">
+            <div className="d-flex flex-column">
+              <label className="form-label fw-bold">User 1</label>
+                <input
+                id="address1"
+                type="text"
+                className='form-control text-center'
+                placeholder='Enter a location'
+                value={user1Input.address1}
+                onChange={(e) => setUser1Input({...user1Input, [e.target.id]: e.target.value})}
+                />
+              <div className="d-flex">
+              <div className="bg-white form-control">
               <h6>Travel mode</h6>
               <div className="d-flex">
                 <input className="form-check-input" type="radio" name="profile1" id="walking1"
@@ -52,7 +55,7 @@ const Form = ({
               </div>
             </div>
 
-            <div className="bg-white form-control w-25">
+            <div className="bg-white form-control">
               <h6>Maximum duration</h6>
               <div className="d-flex">
                 <input className="form-check-input" type="radio" name="duration1" id="101"
@@ -87,88 +90,93 @@ const Form = ({
                 </label>
               </div>
             </div>
+              </div>
+            </div>
+          </div>
 
             {/* User 2 */}
-            <div className="d-flex flex-column align-item-center ">
+            <div className="d-flex flex-column">
+            <label className="form-label fw-bold">User 2</label>
             <input
               id="address2"
               type="text"
-              className='form-control w-25'
+              className='form-control text-center'
               placeholder='Enter a location'
               defaultValue={user2Input.address2}
               onChange={(e) => setUser2Input({...user2Input, [e.target.id]: e.target.value})}
               />
 
-            <div className="bg-white form-control w-25">
-              <h6>Travel mode</h6>
-              <div className="d-flex">
-                <input className="form-check-input" type="radio" name="profile2" id="walking2"
-                  onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
-                  />
-                <label className="form-check-label mx-1" htmlFor="walking2">
-                  Walking
-                </label>
+            <div className="d-flex">
+              <div className="bg-white form-control">
+                <h6>Travel mode</h6>
+                <div className="d-flex">
+                  <input className="form-check-input" type="radio" name="profile2" id="walking2"
+                    onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
+                    />
+                  <label className="form-check-label mx-1" htmlFor="walking2">
+                    Walking
+                  </label>
+                </div>
+
+                <div className="d-flex">
+                  <input className="form-check-input" type="radio" name="profile2" id="cycling2"
+                    onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
+                    />
+                  <label className="form-check-label mx-1" htmlFor="cycling2">
+                    Cycling
+                  </label>
+                </div>
+                <div className="d-flex">
+                  <input className="form-check-input" type="radio" name="profile2" id="driving2"
+                    onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
+                    />
+                  <label className="form-check-label mx-1" htmlFor="driving2">
+                    Driving
+                  </label>
+                </div>
               </div>
 
-              <div className="d-flex">
-                <input className="form-check-input" type="radio" name="profile2" id="cycling2"
-                  onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
-                  />
-                <label className="form-check-label mx-1" htmlFor="cycling2">
-                  Cycling
-                </label>
-              </div>
-              <div className="d-flex">
-                <input className="form-check-input" type="radio" name="profile2" id="driving2"
-                  onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
-                  />
-                <label className="form-check-label mx-1" htmlFor="driving2">
-                  Driving
-                </label>
-              </div>
-            </div>
-
-            <div className="bg-white form-control w-25">
-              <h6>Maximum duration</h6>
-              <div className="d-flex">
-                <input className="form-check-input" type="radio" name="duration2" id="102"
-                  onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
-                  />
-                <label className="form-check-label mx-1" htmlFor="102">
-                  10min
-                </label>
-              </div>
-              <div className="d-flex">
-                <input className="form-check-input" type="radio" name="duration2" id="202"
-                  onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
-                  />
-                <label className="form-check-label mx-1" htmlFor="202">
-                  20min
-                </label>
-              </div>
-              <div className="d-flex">
-                <input className="form-check-input" type="radio" name="duration2" id="302"
-                  onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
-                  />
-                <label className="form-check-label mx-1" htmlFor="302">
-                  30min
-                </label>
-              </div>
-              <div className="d-flex">
-                <input className="form-check-input" type="radio" name="duration2" id="602"
-                  onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
-                  />
-                <label className="form-check-label mx-1" htmlFor="602">
-                  60min
-                </label>
+              <div className="bg-white form-control">
+                <h6>Maximum duration</h6>
+                <div className="d-flex">
+                  <input className="form-check-input" type="radio" name="duration2" id="102"
+                    onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
+                    />
+                  <label className="form-check-label mx-1" htmlFor="102">
+                    10min
+                  </label>
+                </div>
+                <div className="d-flex">
+                  <input className="form-check-input" type="radio" name="duration2" id="202"
+                    onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
+                    />
+                  <label className="form-check-label mx-1" htmlFor="202">
+                    20min
+                  </label>
+                </div>
+                <div className="d-flex">
+                  <input className="form-check-input" type="radio" name="duration2" id="302"
+                    onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
+                    />
+                  <label className="form-check-label mx-1" htmlFor="302">
+                    30min
+                  </label>
+                </div>
+                <div className="d-flex">
+                  <input className="form-check-input" type="radio" name="duration2" id="602"
+                    onChange={(e) => setUser2Input({...user2Input, [e.target.name]: e.target.id})}
+                    />
+                  <label className="form-check-label mx-1" htmlFor="602">
+                    60min
+                  </label>
+                </div>
               </div>
             </div>
-            </div>
-
-            <button type="submit" className='btn btn-primary fw-bold my-1 w-25'>Search</button>
           </div>
-        </form>
-      </div>
+
+        </div>
+        <button type="submit" className='btn btn-primary fw-bold my-1'>Search</button>
+      </form>
     </div>
   )
 }
