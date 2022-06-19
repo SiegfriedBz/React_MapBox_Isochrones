@@ -8,7 +8,7 @@ const MapBox = ({
   fetchedGeoGlobal
 }) => {
 
-  const [geoJsonGlobal, setGeoJsonGlobal] = useState([])
+  const [geoJsonGlobal, setGeoJsonGlobal] = useState({})
 
   const [viewPort, setViewPort] = useState({
     latitude: 47.3983,
@@ -17,30 +17,39 @@ const MapBox = ({
   });
 
   useEffect(() => {
-    if(fetchedGeoGlobal) {
-      setGeoJsonGlobal(fetchedGeoGlobal)
+    if(typeof fetchedGeoGlobal[0] !== 'undefined')  {
+      setGeoJsonGlobal({
+        'type': 'FeatureCollection',
+        'features':  [
+          {...fetchedGeoGlobal[0].features[0], user: 'user1'},
+          {...fetchedGeoGlobal[1].features[0], user: 'user2'},
+        ]
+      })
     }
     return () => {
-      setGeoJsonGlobal([])
+      setGeoJsonGlobal({})
     }
   }, [fetchedGeoGlobal])
 
+
   const layerStyle1 =    {
-    id: 'isoLayer',
+    id: 'user1',
     type: 'fill',
     paint: {
       'fill-color': '#5a3fc0',
       'fill-opacity': 0.3
-    }
+    },
+    // filter: ['==', 'user', 'user1']
   }
 
   const layerStyle2 =    {
-    id: 'isoLayer',
+    id: 'user2',
     type: 'fill',
     paint: {
       'fill-color': '#F47C7C',
       'fill-opacity': 0.3
-    }
+    },
+    // filter: ['==', '$user', 'user2']
   }
 
   return (
@@ -52,13 +61,9 @@ const MapBox = ({
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
-        {geoJsonGlobal &&
+        {typeof fetchedGeoGlobal[0] !== 'undefined' &&
           <>
-            <Source type="geojson" data={geoJsonGlobal[0]}>
-                <Layer {...layerStyle1} />
-            </Source>
-
-            <Source type="geojson" data={geoJsonGlobal[1]}>
+            <Source id="users" type="geojson" data={geoJsonGlobal}>
                 <Layer {...layerStyle2} />
             </Source>
           </>
@@ -66,6 +71,10 @@ const MapBox = ({
       </Map>
     </div>
   )
+
+
+
+
 }
 
 export default MapBox
