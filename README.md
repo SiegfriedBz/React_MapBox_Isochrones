@@ -1,6 +1,6 @@
 # React Isochrones
 
-![image](https://user-images.githubusercontent.com/99029880/174476743-582dc6bc-b665-47ef-ba72-bb96beb49f4d.png)
+![image](https://user-images.githubusercontent.com/99029880/174477021-c2b9626e-0b39-4ef0-8ca3-34bafb9025f8.png)
 
 # Getting Started with Create React App
 
