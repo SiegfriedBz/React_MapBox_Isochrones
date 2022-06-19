@@ -1,4 +1,4 @@
-# React Isochrones
+# React MapBox Isochrones
 
 ![image](https://user-images.githubusercontent.com/99029880/174477021-c2b9626e-0b39-4ef0-8ca3-34bafb9025f8.png)
 
